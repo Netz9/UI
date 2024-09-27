@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
 import { SVGProps } from 'react';
+import Link from "next/link"; 
 
 export function Dashboard() {
   return (
@@ -22,18 +23,12 @@ export function Dashboard() {
             <HomeIcon className="w-4 h-4" />
             <span className="text-sm font-medium">Home</span>
           </button>
-          <button className="w-full flex items-center space-x-2 bg-gray-200 active:bg-gray-300 py-2 px-2 rounded-lg text-gray-800">
-            <WalletIcon className="w-4 h-4" />
-            <span className="text-sm font-medium">Transactions</span>
-          </button>
-          <button className="w-full flex items-center space-x-2 hover:bg-gray-100 active:bg-gray-200 py-2 px-2 rounded-lg text-gray-500">
-            <UsersIcon className="w-4 h-4" />
-            <span className="text-sm font-medium">Accounts</span>
-          </button>
-          <button className="w-full flex items-center space-x-2 hover:bg-gray-100 active:bg-gray-200 py-2 px-2 rounded-lg text-gray-500">
-            <TicketIcon className="w-4 h-4" />
-            <span className="text-sm font-medium">Tax</span>
-          </button>
+          <Link href="/view/estudiante" passHref>
+            <button className="w-full flex items-center space-x-2 hover:bg-gray-100 active:bg-gray-200 py-2 px-2 rounded-lg text-gray-500">
+              <UsersIcon className="w-4 h-4" />
+              <span className="text-sm font-medium">Estudiantes</span>
+            </button>
+          </Link>
         </nav>
       </aside>
       <main className="flex-grow p-6">
@@ -169,26 +164,6 @@ function FilePenIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function HomeIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-      <polyline points="9 22 9 12 15 12 15 22" />
-    </svg>
-  );
-}
-
 function MoveVerticalIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -295,7 +270,7 @@ function UsersIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function WalletIcon(props: SVGProps<SVGSVGElement>) {
+function HomeIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -309,21 +284,13 @@ function WalletIcon(props: SVGProps<SVGSVGElement>) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />
-      <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />
+      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
     </svg>
   );
 }
 
 export {
-  DeleteIcon,
-  DownloadIcon,
-  FilePenIcon,
   HomeIcon,
-  MoveVerticalIcon,
-  ShareIcon,
-  TagIcon,
-  TicketIcon,
   UsersIcon,
-  WalletIcon,
 };
